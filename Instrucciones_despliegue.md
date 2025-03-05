@@ -1,7 +1,29 @@
 # PASOS A SEGUIR
 
-## 1. Crear tablas en DYNAMODB
-### Tabla "Anuncios"
+## 1. instalar el SDK de AWS en python
+    pip install boto3
+
+
+
+## 2. Configurar credenciales de AWS
+    aws configure
+
+    - Ingresar AWS_ACCESS_KEY_ID
+    - Ingresar AWS_SECRET_ACCESS_KEY
+    - Ingresar REGIÓN (eu-west-1)
+
+
+## 3. Ejecutar deploy.py
+    python deploy.py
+
+
+
+## 4. instalar el SDK de AWS en python
+    pip install boto3
+
+
+
+Configurar credenciales de AWS
 Almacena los anuncios publicados.
 
 - **Partition Key:** `id` (tipo **String**)
