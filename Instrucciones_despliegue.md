@@ -288,6 +288,8 @@ Dar permisos a cada función Lambda para acceder a DynamoDB.
 ## 6. Probar la API con `curl`
 Después de desplegar la API, prueba los endpoints usando `curl`.
 
+sustituir '7d82ges3t7' por el ID_API que corresponda.
+
 ### Crear un anuncio (POST /anuncios)
 curl -X POST "https://7d82ges3t7.execute-api.eu-west-1.amazonaws.com/prod/anuncios" -H "Content-Type: application/json" -d "{\"titulo\": \"Prueba 1\", \"descripcion\": \"Esta es una descripción de prueba.\"}"
 
