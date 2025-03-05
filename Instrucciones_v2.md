@@ -118,32 +118,25 @@ Dar permisos a cada función Lambda para acceder a DynamoDB.
 ## 6. Probar la API con `curl`
 Después de desplegar la API, prueba los endpoints usando `curl`.
 
-###  Crear un anuncio (`POST /anuncios`)
-```bash
+# Crear un anuncio (POST /anuncios)
 curl -X POST "https://{API-ID}.execute-api.eu-west-1.amazonaws.com/prod/anuncios" \
      -H "Content-Type: application/json" \
      -d "{\"titulo\": \"Prueba 1\", \"descripcion\": \"Esta es una descripción de prueba.\"}"
 
+# Extraer anuncios (GET /anuncios)
+curl -X GET "https://7d82ges3t7.execute-api.eu-west-1.amazonaws.com/prod/anuncios"
 
-###  Extraer anuncios (`GET /anuncios`)
-```bash
-    curl -X GET "https://7d82ges3t7.execute-api.eu-west-1.amazonaws.com/prod/anuncios"
+# Extraer anuncio por ID (GET /anuncios/{id})
+curl -X GET "https://7d82ges3t7.execute-api.eu-west-1.amazonaws.com/prod/anuncios/9fd2c650-bd90-4d4a-b10c-9f59d89acd6b"
 
+# Crear comentario en un anuncio (POST /anuncios/{id}/comentarios)
+curl -X POST "https://7d82ges3t7.execute-api.eu-west-1.amazonaws.com/prod/anuncios/9fd2c650-bd90-4d4a-b10c-9f59d89acd6b/comentarios" \
+     -H "Content-Type: application/json" \
+     -d "{\"usuario\": \"Usuario prueba post comentario\", \"mensaje\": \"prueba de comentario 2\"}"
 
+# Extraer comentarios de un anuncio particular (GET /anuncios/{id}/comentarios)
+curl -X GET "https://7d82ges3t7.execute-api.eu-west-1.amazonaws.com/prod/anuncios/9fd2c650-bd90-4d4a-b10c-9f59d89acd6b/comentarios"
 
-###  Extraer anuncio por id del anuncio (`GET /anuncios/{id}`)
-```bash
-    curl -X GET "https://7d82ges3t7.execute-api.eu-west-1.amazonaws.com/prod/anuncios/9fd2c650-bd90-4d4a-b10c-9f59d89acd6b"
-
-
-###  Crear comentario en un anuncio (`POST /anuncios/{id}/comentarios`)
-```bash
-    curl -X POST "https://7d82ges3t7.execute-api.eu-west-1.amazonaws.com/prod/anuncios/9fd2c650-bd90-4d4a-b10c-9f59d89acd6b/comentarios" -H "Content-Type: application/json" -d "{\"usuario\": \"Usuario prueba post comentario\", \"mensaje\": \"prueba de comentario 2\"}"
-
-
-###  Extraer comentarios de un anuncio particular (`GET /anuncios/{id}/comentarios`)
-```bash
-    curl -X GET "https://7d82ges3t7.execute-api.eu-west-1.amazonaws.com/prod/anuncios/9fd2c650-bd90-4d4a-b10c-9f59d89acd6b/comentarios"
 
 
 
