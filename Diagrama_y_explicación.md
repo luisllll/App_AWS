@@ -8,7 +8,7 @@
 
 El usuario interactúa con la aplicación a través de una API REST expuesta por Amazon API Gateway, que sirve como punto de entrada para realizar operaciones sobre anuncios y comentarios. Cuando un usuario envía una solicitud GET o POST desde un cliente (como curl o Postman), API Gateway redirige la petición a una función AWS Lambda, la cual ejecuta la lógica necesaria para procesar anuncios o comentarios. AWS Lambda luego interactúa con Amazon DynamoDB, almacenando o recuperando datos según corresponda, y devuelve una respuesta estructurada al usuario. Todos estos componentes operan de manera serverless, asegurando escalabilidad, bajo costo y alta disponibilidad.
 
-## Arquitectura Tecnológica
+
 
 ### Servicios AWS Implementados
 
@@ -36,25 +36,18 @@ El usuario interactúa con la aplicación a través de una API REST expuesta por
 - **Propósito**: Control de acceso y seguridad
 - **Funcionalidades**:
   * Gestión de permisos
-  * Implementación del principio de mínimo privilegio
   * Seguridad de credenciales entre servicios
 
 
 
-## Diseño de Infraestructura Serverless
+### Diseño de Infraestructura
 
-### Modelo Computacional
-
-La arquitectura serverless elimina la gestión tradicional de infraestructura, permitiendo:
+La arquitectura serverless permite:
 - Ejecución de código bajo demanda
-- Reducción significativa de costos operativos
 - Escalabilidad automática
-
-### Arquitectura de Microservicios
-
-El diseño implementa:
 - Funciones Lambda independientes
 - Componentes desacoplados
+
 
 ## Endpoints de la API
 
@@ -69,11 +62,7 @@ El diseño implementa:
    - `POST /anuncios/{id}/comentarios`: Añadir comentarios
    - `GET /anuncios/{id}/comentarios`: Listar comentarios asociados a un anuncio
 
-## Consideraciones de Implementación
 
-### Ventajas Tecnológicas
-- **Escalabilidad Dinámica**: Ajuste automático de recursos
-- **Eficiencia Económica**: Pago por uso real de recursos
 
 
 
