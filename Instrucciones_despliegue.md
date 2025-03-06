@@ -26,4 +26,3 @@ Después de desplegar la aplicación, probar los endpoints usando `curl` con los
 
 
 
-
